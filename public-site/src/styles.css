@@ -1,0 +1,347 @@
+:root {
+    --bg: #0a0709;
+    --purple: #8b3ce8;
+    --coral: #f2634f;
+    --orange: #f5a03d;
+    --blue: #4a8fe8;
+    --cream: #f5efe4;
+    --muted: #a89b8f;
+    --line: rgba(245, 239, 228, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg);
+    color: var(--cream);
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 6vw;
+    border-bottom: 1px solid var(--line);
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+header nav a {
+    color: var(--muted);
+    text-decoration: none;
+    margin-left: 22px;
+    font-size: 14px;
+}
+
+.hero {
+    padding: 80px 6vw 60px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    margin-bottom: 16px;
+}
+
+.hero p {
+    color: var(--muted);
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 60px 6vw;
+    border-top: 1px solid var(--line);
+}
+
+.eyebrow {
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+
+h2 {
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    margin-bottom: 30px;
+}
+
+.muted {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.error-note {
+    color: var(--coral);
+    padding: 0 6vw;
+    font-size: 14px;
+}
+
+/* houses */
+.houses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.house-card {
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 26px;
+    background: rgba(245, 239, 228, 0.025);
+}
+
+.house-label {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 10px;
+}
+
+.house-name {
+    font-weight: 600;
+    font-size: 22px;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 10px;
+}
+
+.house-tagline {
+    font-size: 13.5px;
+    color: var(--cream);
+    margin-bottom: 8px;
+}
+
+.house-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.house-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.house-tags span {
+    font-size: 12px;
+    color: var(--muted);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    padding: 5px 12px;
+}
+
+/* credibility carousel */
+.cred-carousel {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.cred-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.cred-track {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    padding-bottom: 4px;
+}
+
+.cred-card {
+    flex: 0 0 auto;
+    width: min(86vw, 380px);
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 22px 20px;
+    background: rgba(245, 239, 228, 0.025);
+}
+
+.cred-photo {
+    flex: 0 0 60px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: linear-gradient(150deg, rgba(139, 60, 232, 0.4), rgba(242, 99, 79, 0.3));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cred-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.cred-photo .initials {
+    font-weight: 600;
+    font-size: 18px;
+    color: rgba(245, 239, 228, 0.85);
+}
+
+.cred-body {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.cred-name {
+    font-weight: 600;
+    font-size: 15.5px;
+}
+
+.cred-meta {
+    font-size: 12px;
+    color: var(--muted);
+    margin: 3px 0 12px;
+}
+
+.cred-remark {
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.cred-remark-image {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+.cred-dots {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 18px;
+}
+
+.cred-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--line);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: width 0.25s ease, background 0.25s ease, border-radius 0.25s ease;
+}
+
+.cred-dot.active {
+    width: 22px;
+    border-radius: 5px;
+    background: var(--orange);
+}
+
+/* faces */
+.faces-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.face-card {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(245, 239, 228, 0.025);
+    max-width: 620px;
+}
+
+.face-info {
+    padding: 28px 26px;
+    display: flex;
+    flex-direction: column;
+}
+
+.face-name {
+    font-weight: 600;
+    font-size: 21px;
+}
+
+.face-role {
+    font-size: 13.5px;
+    color: var(--muted);
+    margin-top: 6px;
+}
+
+.face-house {
+    margin-top: 14px;
+    display: inline-flex;
+    width: fit-content;
+    font-size: 11.5px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 100px;
+    background: linear-gradient(100deg, rgba(74, 143, 232, 0.18), rgba(139, 60, 232, 0.18));
+    border: 1px solid var(--line);
+}
+
+.face-image {
+    position: relative;
+    min-height: 200px;
+    background: linear-gradient(150deg, rgba(139, 60, 232, 0.35), rgba(242, 99, 79, 0.25));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.face-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.face-image .initials {
+    font-weight: 600;
+    font-size: 40px;
+    color: rgba(245, 239, 228, 0.85);
+}
+
+.face-image .placeholder-note {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 10px;
+    color: rgba(245, 239, 228, 0.55);
+}
+
+footer {
+    text-align: center;
+    padding: 40px 6vw;
+    font-size: 12px;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+}
+
+@media (max-width: 560px) {
+    .face-card {
+        grid-template-columns: 1fr;
+    }
+
+    .face-image {
+        order: -1;
+        min-height: 180px;
+    }
+}

@@ -2,9 +2,17 @@ export default function HouseCard({ house }) {
     const gradient = `linear-gradient(100deg, ${house.accent_from || '#4a8fe8'}, ${house.accent_to || '#8b3ce8'})`;
 
     return (
-        <div className="house-card">
+        <div className="house">
             <div className="house-label">House</div>
-            <div className="house-name" style={{ backgroundImage: gradient }}>
+            <div
+                className="house-name"
+                style={{
+                    backgroundImage: gradient,
+                    WebkitBackgroundClip: 'text',
+                    backgroundClip: 'text',
+                    color: 'transparent'
+                }}
+            >
                 {house.name}
             </div>
             {house.tagline && <div className="house-tagline">{house.tagline}</div>}

@@ -7,9 +7,9 @@ function initialsOf(name) {
         .join('');
 }
 
-export default function FaceCard({ face }) {
+export default function FaceCard({ face, fadeOut }) {
     return (
-        <div className="face-card">
+        <div className={`face-card${fadeOut ? ' fade-out' : ''}`}>
             <div className="face-info">
                 <div className="face-name">{face.name}</div>
                 {face.role && <div className="face-role">{face.role}</div>}

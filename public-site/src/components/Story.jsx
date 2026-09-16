@@ -1,45 +1,64 @@
-const TIMELINE = [
+const STEPS = [
     {
-        when: 'Early on',
-        what: 'Picked up technical gigs during school, built on being someone people already trusted to figure things out.'
+        num: '01',
+        label: 'The first door',
+        title: 'BlooomOnline',
+        desc: 'BlooomOnline started with social media management — helping brands show up, communicate better and grow their presence online.'
     },
     {
-        when: 'In parallel',
-        what: 'Led as department president and as part of the SUG — 13 departments, real accountability, not a title on a resume.'
+        num: '02',
+        label: 'Then came the requests',
+        title: 'More than social',
+        desc: 'As the network grew, so did the kind of work people brought to Blooom. Websites. Design. Motion. Digital experiences. The opportunities were no longer limited to social media.'
     },
     {
-        when: 'Full focus',
-        what: 'Set the tech side aside to grow BlooomOnline, managing social presence and brand growth full-time.'
+        num: '03',
+        label: 'The missing piece',
+        title: 'Blooom needed a technical side.',
+        desc: 'The demand was there, but the technical work needed more than one person could handle alone. So instead of keeping the idea on the sidelines, Blooom created a way to build it properly.'
     },
     {
-        when: 'Now',
-        what: 'Picking the tech side back up as BlooomLabs, run alongside BlooomOnline under Blooom.'
+        num: '04',
+        label: 'The new house',
+        title: 'Enter BlooomLabs.',
+        desc: 'BlooomLabs became the technical and creative production house — bringing skilled people together across development, design, motion and other digital disciplines to turn ideas into finished work.'
+    },
+    {
+        num: '05',
+        label: 'Today',
+        title: 'Two sides. One Blooom.',
+        // TODO: screenshot cuts off after this line — paste the rest of the
+        // "05 Today" paragraph here once you have it.
+        desc: "BlooomOnline helps brands grow their presence. "
     }
 ];
 
 export default function Story() {
     return (
         <section id="story">
-            <div className="wrap story-grid">
-                <div>
-                    <div className="eyebrow">The story so far</div>
-                    <h2>It started with trust, before it had a name.</h2>
+            <div className="wrap">
+                <div className="story-intro">
+                    <div className="eyebrow">How Blooom took shape</div>
+                    <h2>It started with social media. Then people started asking for more.</h2>
                     <p>
-                        Long before Blooom existed, there was a track record of people trusting one
-                        person to run things — technical gigs picked up on reputation alone, then real
-                        leadership across an entire student body. That trust is the actual asset. Blooom
-                        is what happens when it gets a name and a structure.
-                    </p>
-                    <p>
-                        The tech instincts were set aside for a season to focus fully on growing brands
-                        online. Now both sides are active at once, under one house.
+                        Blooom wasn't built with every piece figured out from day one. It started with{' '}
+                        <strong>one skill, a growing network, and people who kept coming back with
+                        bigger problems to solve.</strong> What began as BlooomOnline gradually opened
+                        the door to something bigger.
                     </p>
                 </div>
-                <div className="timeline">
-                    {TIMELINE.map((row) => (
-                        <div className="t-row" key={row.when}>
-                            <div className="t-when">{row.when}</div>
-                            <div className="t-what">{row.what}</div>
+
+                <div className="story-steps">
+                    {STEPS.map((step) => (
+                        <div className="story-step" key={step.num}>
+                            <div className="story-step-marker">
+                                <div className="story-step-num">{step.num}</div>
+                                <div className="story-step-label">{step.label}</div>
+                            </div>
+                            <div>
+                                <div className="story-step-title">{step.title}</div>
+                                <div className="story-step-desc">{step.desc}</div>
+                            </div>
                         </div>
                     ))}
                 </div>
